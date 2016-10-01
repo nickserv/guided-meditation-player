@@ -40,16 +40,12 @@
         },
         is: 'minimal-audio',
         properties: {
-          playing: {
-            type: Boolean,
-            notify: true,
-            value: false
-          },
           src: {
             type: String
           }
         },
         ready: function () {
+          this.playing = false
           this.audio = new Audio(this.src)
           this.audio.addEventListener('playing', () => this.playing = true)
           this.audio.addEventListener('pause', () => this.playing = false)
