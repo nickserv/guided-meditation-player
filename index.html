@@ -44,16 +44,18 @@
             type: Boolean,
             notify: true,
             value: false
+          },
+          src: {
+            type: String
           }
         },
         ready: function () {
-          var audioSource = 'http://developer.mozilla.org/@api/deki/files/2926/=AudioTest.ogg'
-          this.audio = new Audio(audioSource)
+          this.audio = new Audio(this.src)
           this.audio.addEventListener('playing', () => this.playing = true)
           this.audio.addEventListener('pause', () => this.playing = false)
         }
       })
     </script>
   </dom-module>
-  <minimal-audio></minimal-audio>
+  <minimal-audio src="http://developer.mozilla.org/@api/deki/files/2926/=AudioTest.ogg"/>
 </html>
