@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <meta charset="utf-8">
-  <title>Minimal Audio Player</title>
+  <title>Meditation Player</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.20/webcomponents-lite.min.js"></script>
   <link rel="import" href="https://cdn.rawgit.com/Polymer/polymer/master/polymer.html">
   <link rel="stylesheet" href="https://unpkg.com/normalize.css@4.2.0">
@@ -12,7 +12,7 @@
       width: 100%;
     }
   </style>
-  <dom-module id="minimal-audio">
+  <dom-module id="meditation-player">
     <template>
       <style>
         .controls {
@@ -29,7 +29,7 @@
       </div>
     </template>
     <script>
-      // HTMLImports.whenReady(() => Polymer(MinimalAudio))
+      // HTMLImports.whenReady(() => Polymer(MeditationPlayer))
       Polymer({
         iconClass: function (playing) {
           return playing ? 'pause' : 'play'
@@ -38,7 +38,7 @@
           this.audio[this.playing ? 'pause' : 'play']()
           this.playing = !this.playing
         },
-        is: 'minimal-audio',
+        is: 'meditation-player',
         properties: {
           src: {
             type: String
@@ -53,5 +53,5 @@
       })
     </script>
   </dom-module>
-  <minimal-audio src="http://developer.mozilla.org/@api/deki/files/2926/=AudioTest.ogg"/>
+  <meditation-player src="http://developer.mozilla.org/@api/deki/files/2926/=AudioTest.ogg"/>
 </html>
