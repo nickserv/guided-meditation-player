@@ -30,14 +30,13 @@
       <audio id="audio" src="{{src}}" />
     </template>
     <script>
-      // HTMLImports.whenReady(() => Polymer(MeditationPlayer))
       Polymer({
-        iconClass: function (playing) {
-          return playing ? 'pause' : 'play'
-        },
         handleTap: function () {
           this.$.audio[this.playing ? 'pause' : 'play']()
           this.playing = !this.playing
+        },
+        iconClass: function (playing) {
+          return playing ? 'pause' : 'play'
         },
         is: 'meditation-player',
         properties: {
