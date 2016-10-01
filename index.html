@@ -27,6 +27,7 @@
       <div class="controls" on-tap="handleTap">
         <span class$="icon fa fa-{{iconClass(playing)}}" />
       </div>
+      <audio id="audio" src="{{src}}" />
     </template>
     <script>
       // HTMLImports.whenReady(() => Polymer(MeditationPlayer))
@@ -35,7 +36,7 @@
           return playing ? 'pause' : 'play'
         },
         handleTap: function () {
-          this.audio[this.playing ? 'pause' : 'play']()
+          this.$.audio[this.playing ? 'pause' : 'play']()
           this.playing = !this.playing
         },
         is: 'meditation-player',
@@ -46,9 +47,8 @@
         },
         ready: function () {
           this.playing = false
-          this.audio = new Audio(this.src)
-          this.audio.addEventListener('playing', () => this.playing = true)
-          this.audio.addEventListener('pause', () => this.playing = false)
+          this.$.audio.addEventListener('playing', () => this.playing = true)
+          this.$.audio.addEventListener('pause', () => this.playing = false)
         }
       })
     </script>
