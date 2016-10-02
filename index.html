@@ -2,8 +2,8 @@
 <html lang="en">
   <meta charset="utf-8">
   <title>Meditation Player</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.20/webcomponents-lite.min.js"></script>
-  <link rel="import" href="https://polygit.org/components/polymer/polymer.html">
+
+  <!-- styles -->
   <link rel="stylesheet" href="https://unpkg.com/normalize.css@4.2.0">
   <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.6.3/css/font-awesome.min.css">
   <style>
@@ -12,6 +12,14 @@
       width: 100%;
     }
   </style>
+
+  <!-- polyfills -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.20/webcomponents-lite.min.js"></script>
+
+  <!-- elements -->
+  <link rel="import" href="https://polygit.org/components/polymer/polymer.html">
+
+  <!-- custom elements -->
   <dom-module id="meditation-player">
     <template>
       <style>
@@ -52,5 +60,7 @@
       })
     </script>
   </dom-module>
+
+  <!-- main -->
   <meditation-player src="tones/1.ogg" />
 </html>
