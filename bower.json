@@ -4,7 +4,6 @@
   "main": "index.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
-    "font-awesome": "^4.6.3",
     "normalize-css": "^4.2.0"
   },
   "devDependencies": {
