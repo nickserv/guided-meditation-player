@@ -29,17 +29,19 @@ Open `index.html` in a [browser with HTML Import support](http://caniuse.com/#fe
 - Audio starts paused
 - When played, a segment will play until its completion (unless it is prematurely paused by the user) and wait until the play button is pressed to play the next segment
 
-## Install the Polymer-CLI
+## Development
+
+### Install the Polymer-CLI
 
 First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your application locally.
 
-## Viewing Your Application
+### Viewing Your Application
 
 ```
 $ polymer serve
 ```
 
-## Building Your Application
+### Building Your Application
 
 ```
 $ polymer build
@@ -56,7 +58,7 @@ from:
 $ polymer serve build/bundled
 ```
 
-## Running Tests
+### Running Tests
 
 ```
 $ polymer test
