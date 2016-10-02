@@ -4,6 +4,12 @@ A minimal guided meditation player, built with Polymer.
 ## Goal
 Play a series of meditation audio segments with arbitrarily long pauses in between segments. Audio must automatically pause between segments, pressing a play button to continue.
 
+## Status
+In development, currently as a prototype for the UI.
+
+## Usage
+Open `index.html` in a [browser with HTML Import support](http://caniuse.com/#feat=imports).
+
 ## Requirements
 
 ### Non Functional
