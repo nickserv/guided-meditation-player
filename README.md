@@ -7,9 +7,6 @@ Play a series of meditation audio segments with arbitrarily long pauses in betwe
 ## Status
 In development, currently as a prototype for the UI.
 
-## Usage
-Open `index.html` in a [browser with HTML Import support](http://caniuse.com/#feat=imports).
-
 ## Requirements
 
 ### Non Functional
