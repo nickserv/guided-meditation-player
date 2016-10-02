@@ -1,4 +1,6 @@
 # Guided Meditation Player
+[![Build Status](https://travis-ci.org/nickmccurdy/guided-meditation-player.svg?branch=master)](https://travis-ci.org/nickmccurdy/guided-meditation-player)
+
 A minimal guided meditation player, built with Polymer.
 
 ## Goal
