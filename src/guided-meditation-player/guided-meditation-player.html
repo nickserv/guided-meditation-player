@@ -1,22 +1,30 @@
 <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.6.3/css/font-awesome.min.css">
-<link rel="import" href="https://polygit.org/components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
 <dom-module id="guided-meditation-player">
   <template>
     <style>
-     .controls {
-       height: 100%;
-       text-align: center;
-     }
-     .icon {
-       display: block-inline;
-       font-size: 100px;
-     }
+      :host {
+          display: block;
+      }
+      :host, .controls {
+        height: 100%;
+      }
+      .controls {
+        height: 100%;
+        text-align: center;
+      }
+      .icon {
+        display: block-inline;
+        font-size: 100px;
+      }
     </style>
     <div class="controls" on-tap="handleTap">
       <span class$="icon fa fa-{{iconClass(playing)}}" />
     </div>
     <audio id="audio" src="{{src}}" />
   </template>
+
   <script>
     Polymer({
       handleTap: function () {

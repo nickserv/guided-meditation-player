@@ -1,23 +1,25 @@
 <!doctype html>
-<html lang="en">
-  <meta charset="utf-8">
-  <title>Guided Meditation Player</title>
 
-  <!-- styles -->
-  <link rel="stylesheet" href="https://unpkg.com/normalize.css@4.2.0">
-  <style>
-    html, body {
-      height: 100%;
-      width: 100%;
-    }
-  </style>
-
-  <!-- polyfills -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.20/webcomponents-lite.min.js"></script>
-
-  <!-- elements -->
-  <link rel="import" href="guided-meditation-player.html">
-
-  <!-- main -->
-  <guided-meditation-player src="tones/1.ogg" />
+<html>
+  <head>
+    <title>Guided Meditation Player</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+    <!-- styles -->
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@4.2.0">
+    <style>
+      html, body {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <!-- polyfills -->
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <!-- elements -->
+    <link rel="import" href="/src/guided-meditation-player/guided-meditation-player.html">
+  </head>
+  <body>
+    <guided-meditation-player src="tones/1.ogg" />
+  </body>
 </html>
