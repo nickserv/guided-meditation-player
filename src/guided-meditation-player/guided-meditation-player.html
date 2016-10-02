@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="guided-meditation-player">
+  <template>
+    <style>
+      :host {
+          display: block;
+      }
+      :host, .controls {
+        height: 100%;
+      }
+      .controls {
+        height: 100%;
+        text-align: center;
+      }
+      .icon {
+        display: block-inline;
+        font-size: 100px;
+      }
+    </style>
+    <div class="controls" on-tap="handleTap">
+      <span class$="icon fa fa-{{iconClass(playing)}}" />
+    </div>
+    <audio id="audio" src="{{src}}" />
+  </template>
+
+  <script>
+    Polymer({
+      handleTap: function () {
+        this.$.audio[this.playing ? 'pause' : 'play']()
+        this.playing = !this.playing
+      },
+      iconClass: function (playing) {
+        return playing ? 'pause' : 'play'
+      },
+      is: 'guided-meditation-player',
+      properties: {
+        src: {
+          type: String
+        }
+      },
+      ready: function () {
+        this.playing = false
+        this.$.audio.addEventListener('playing', () => this.playing = true)
+        this.$.audio.addEventListener('pause', () => this.playing = false)
+      }
+    })
+  </script>
+</dom-module>

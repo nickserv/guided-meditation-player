@@ -1,66 +1,25 @@
 <!doctype html>
-<html lang="en">
-  <meta charset="utf-8">
-  <title>Guided Meditation Player</title>
 
-  <!-- styles -->
-  <link rel="stylesheet" href="https://unpkg.com/normalize.css@4.2.0">
-  <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.6.3/css/font-awesome.min.css">
-  <style>
-    html, body {
-      height: 100%;
-      width: 100%;
-    }
-  </style>
-
-  <!-- polyfills -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.20/webcomponents-lite.min.js"></script>
-
-  <!-- elements -->
-  <link rel="import" href="https://polygit.org/components/polymer/polymer.html">
-
-  <!-- custom elements -->
-  <dom-module id="meditation-player">
-    <template>
-      <style>
-        .controls {
-          height: 100%;
-          text-align: center;
-        }
-        .icon {
-          display: block-inline;
-          font-size: 100px;
-        }
-      </style>
-      <div class="controls" on-tap="handleTap">
-        <span class$="icon fa fa-{{iconClass(playing)}}" />
-      </div>
-      <audio id="audio" src="{{src}}" />
-    </template>
-    <script>
-      Polymer({
-        handleTap: function () {
-          this.$.audio[this.playing ? 'pause' : 'play']()
-          this.playing = !this.playing
-        },
-        iconClass: function (playing) {
-          return playing ? 'pause' : 'play'
-        },
-        is: 'meditation-player',
-        properties: {
-          src: {
-            type: String
-          }
-        },
-        ready: function () {
-          this.playing = false
-          this.$.audio.addEventListener('playing', () => this.playing = true)
-          this.$.audio.addEventListener('pause', () => this.playing = false)
-        }
-      })
-    </script>
-  </dom-module>
-
-  <!-- main -->
-  <meditation-player src="tones/1.ogg" />
+<html>
+  <head>
+    <title>Guided Meditation Player</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+    <!-- styles -->
+    <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
+    <style>
+      html, body {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <!-- polyfills -->
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <!-- elements -->
+    <link rel="import" href="/src/guided-meditation-player/guided-meditation-player.html">
+  </head>
+  <body>
+    <guided-meditation-player src="/tones/1.ogg" />
+  </body>
 </html>

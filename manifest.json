@@ -1,0 +1,7 @@
+{
+  "name": "guided-meditation-player",
+  "short_name": "guided-meditation-player",
+  "description": "A minimal guided meditation player, built with Polymer.",
+  "start_url": "/",
+  "display": "standalone"
+}
