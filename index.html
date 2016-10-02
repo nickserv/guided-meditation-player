@@ -20,7 +20,7 @@
   <link rel="import" href="https://polygit.org/components/polymer/polymer.html">
 
   <!-- custom elements -->
-  <dom-module id="meditation-player">
+  <dom-module id="guided-meditation-player">
     <template>
       <style>
         .controls {
@@ -46,7 +46,7 @@
         iconClass: function (playing) {
           return playing ? 'pause' : 'play'
         },
-        is: 'meditation-player',
+        is: 'guided-meditation-player',
         properties: {
           src: {
             type: String
@@ -62,5 +62,5 @@
   </dom-module>
 
   <!-- main -->
-  <meditation-player src="tones/1.ogg" />
+  <guided-meditation-player src="tones/1.ogg" />
 </html>
