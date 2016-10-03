@@ -19,24 +19,24 @@
 
   <script>
     Polymer({
-      getSrc: function (srcset, index) {
+      computeSrc: function (srcset, index) {
         return srcset[index]
       },
-      handleTap: function () {
+      onTap: function () {
         this.$.audio[this.playing ? 'pause' : 'play']()
         this.playing = !this.playing
       },
-      getIcon: function (playing) {
+      computeIcon: function (playing) {
         return playing ? 'pause' : 'play-arrow'
       },
       is: 'guided-meditation-player',
       listeners: {
-        'tap': 'handleTap',
+        'tap': 'onTap',
         'audio.playing': 'onPlay',
         'audio.pause': 'onPause',
-        'audio.ended': 'next'
+        'audio.ended': 'onEnd'
       },
-      next: function () {
+      onEnd: function () {
         if (this.index + 1 < this.srcset.length) {
           this.index++
         } else {
@@ -52,11 +52,11 @@
       properties: {
         currentSrc: {
           type: String,
-          computed: 'getSrc(srcset, index)'
+          computed: 'computeSrc(srcset, index)'
         },
         icon: {
           type: String,
-          computed: 'getIcon(playing)'
+          computed: 'computeIcon(playing)'
         },
         index: {
           type: Number,
