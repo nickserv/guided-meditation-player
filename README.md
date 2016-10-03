@@ -1,4 +1,4 @@
-# Guided Meditation Player
+# [Guided Meditation Player](http://meditationplayer.surge.sh/)
 [![Build Status](https://travis-ci.org/nickmccurdy/guided-meditation-player.svg?branch=master)](https://travis-ci.org/nickmccurdy/guided-meditation-player)
 [![Dependency Status](https://gemnasium.com/badges/github.com/nickmccurdy/guided-meditation-player.svg)](https://gemnasium.com/github.com/nickmccurdy/guided-meditation-player)
 
