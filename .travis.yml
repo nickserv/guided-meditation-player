@@ -16,6 +16,6 @@ before_script:
   - npm install -g bower polymer-cli
   - bower install
 script:
-  - polymer lint --no-follow-dependencies
+  - polymer lint *.html src/**/*.html
   - polymer build
   - xvfb-run polymer test
