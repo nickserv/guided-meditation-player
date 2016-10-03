@@ -38,12 +38,23 @@
         return playing ? 'pause' : 'play-arrow'
       },
       is: 'guided-meditation-player',
+      listeners: {
+        'audio.playing': 'onPlay',
+        'audio.pause': 'onPause',
+        'audio.ended': 'next'
+      },
       next: function () {
         if (this.index + 1 < this.srcset.length) {
           this.index++
         } else {
           this.index = 0
         }
+      },
+      onPause: function () {
+        this.playing = false
+      },
+      onPlay: function () {
+        this.playing = true
       },
       properties: {
         index: {
@@ -57,11 +68,6 @@
         srcset: {
           type: Array
         }
-      },
-      ready: function () {
-        this.$.audio.addEventListener('playing', () => this.playing = true)
-        this.$.audio.addEventListener('pause', () => this.playing = false)
-        this.$.audio.addEventListener('ended', this.next.bind(this))
       }
     })
   </script>
