@@ -44,11 +44,11 @@
       listeners: {
         'tap': 'onTap',
         'audio.playing': 'onPlay',
-        'audio.pause': 'onPause',
+        'audio.pause': 'onStop',
         'audio.ended': 'onEnd'
       },
       computeIcon: function (playing) {
-        return playing ? 'pause' : 'play-arrow'
+        return playing ? 'stop' : 'play-arrow'
       },
       computeSrc: function (srcset, index) {
         return srcset[index]
@@ -60,11 +60,12 @@
           this.index = 0
         }
       },
-      onPause: function () {
-        this.playing = false
-      },
       onPlay: function () {
         this.playing = true
+      },
+      onStop: function () {
+        this.playing = false
+        this.$.audio.currentTime = 0
       },
       onTap: function () {
         this.$.audio[this.playing ? 'pause' : 'play']()
