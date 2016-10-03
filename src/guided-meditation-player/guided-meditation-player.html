@@ -5,24 +5,16 @@
   <template>
     <style>
       :host {
-          display: block;
-      }
-      :host, .controls {
-        height: 100%;
-      }
-      .controls {
+        --iron-icon-height: 100px;
+        --iron-icon-width: 100px;
+        display: block;
         height: 100%;
         text-align: center;
       }
-      iron-icon {
-        --iron-icon-height: 100px;
-        --iron-icon-width: 100px;
-      }
     </style>
-    <div class="controls" on-tap="handleTap">
-      <iron-icon icon="av:[[icon(playing)]]" />
-    </div>
-    <audio id="audio" src="[[getSrc(srcset, index)]]" />
+
+    <iron-icon icon="av:[[icon]]" />
+    <audio id="audio" src="[[currentSrc]]" />
   </template>
 
   <script>
@@ -34,11 +26,12 @@
         this.$.audio[this.playing ? 'pause' : 'play']()
         this.playing = !this.playing
       },
-      icon: function (playing) {
+      getIcon: function (playing) {
         return playing ? 'pause' : 'play-arrow'
       },
       is: 'guided-meditation-player',
       listeners: {
+        'tap': 'handleTap',
         'audio.playing': 'onPlay',
         'audio.pause': 'onPause',
         'audio.ended': 'next'
@@ -57,6 +50,14 @@
         this.playing = true
       },
       properties: {
+        currentSrc: {
+          type: String,
+          computed: 'getSrc(srcset, index)'
+        },
+        icon: {
+          type: String,
+          computed: 'getIcon(playing)'
+        },
         index: {
           type: Number,
           value: 0
