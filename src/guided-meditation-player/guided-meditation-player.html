@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="https://unpkg.com/font-awesome@4.6.3/css/font-awesome.min.css">
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-icons/av-icons.html">
 
 <dom-module id="guided-meditation-player">
   <template>
@@ -14,13 +14,13 @@
         height: 100%;
         text-align: center;
       }
-      .icon {
-        display: block-inline;
-        font-size: 100px;
+      iron-icon {
+        --iron-icon-height: 100px;
+        --iron-icon-width: 100px;
       }
     </style>
     <div class="controls" on-tap="handleTap">
-      <span class$="icon fa fa-{{iconClass(playing)}}" />
+      <iron-icon icon="av:{{icon(playing)}}"/>
     </div>
     <audio id="audio" src="{{src}}" />
   </template>
@@ -31,8 +31,8 @@
         this.$.audio[this.playing ? 'pause' : 'play']()
         this.playing = !this.playing
       },
-      iconClass: function (playing) {
-        return playing ? 'pause' : 'play'
+      icon: function (playing) {
+        return playing ? 'pause' : 'play-arrow'
       },
       is: 'guided-meditation-player',
       properties: {
