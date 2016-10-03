@@ -20,9 +20,9 @@
       }
     </style>
     <div class="controls" on-tap="handleTap">
-      <iron-icon icon="av:{{icon(playing)}}"/>
+      <iron-icon icon="av:[[icon(playing)]]" />
     </div>
-    <audio id="audio" src="{{getSrc(srcset, index)}}" />
+    <audio id="audio" src="[[getSrc(srcset, index)]]" />
   </template>
 
   <script>
@@ -46,13 +46,19 @@
         }
       },
       properties: {
+        index: {
+          type: Number,
+          value: 0
+        },
+        playing: {
+          type: Boolean,
+          value: false
+        },
         srcset: {
           type: Array
         }
       },
       ready: function () {
-        this.playing = false
-        this.index = 0
         this.$.audio.addEventListener('playing', () => this.playing = true)
         this.$.audio.addEventListener('pause', () => this.playing = false)
         this.$.audio.addEventListener('ended', this.next.bind(this))
