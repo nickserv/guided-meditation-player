@@ -1,0 +1,15 @@
+<link rel="import" href="../guided-meditation-player/guided-meditation-player.html">
+
+<dom-module id="guided-meditation-player-app">
+  <template>
+    <guided-meditation-player srcset="{{srcset}}" />
+  </template>
+  <script>
+    Polymer({
+      is: 'guided-meditation-player-app',
+      ready: function () {
+        this.srcset = Array(8).fill().map((_, i) => `/src/tones/${i+1}.mp3`)
+      }
+    })
+  </script>
+</dom-module>
