@@ -3,7 +3,7 @@
   "description": "A minimal guided meditation player, built with Polymer.",
   "main": "index.html",
   "dependencies": {
-    "polymer": "#^1.4.0",
+    "polymer": "^1.4.0",
     "normalize-css": "^4.2.0",
     "iron-icons": "^1.1.3"
   },
