@@ -1,4 +1,4 @@
-<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-a11y-keys-behavior/iron-a11y-keys-behavior.html">
 <link rel="import" href="../../bower_components/iron-icons/av-icons.html">
 
 <dom-module id="guided-meditation-player">
@@ -20,6 +20,7 @@
   <script>
     Polymer({
       is: 'guided-meditation-player',
+      behaviors: [Polymer.IronA11yKeysBehavior],
       properties: {
         currentSrc: {
           type: String,
@@ -32,6 +33,10 @@
         index: {
           type: Number,
           value: 0
+        },
+        keyEventTarget: {
+          type: Object,
+          value: document.body
         },
         playing: {
           type: Boolean,
@@ -46,6 +51,9 @@
         'audio.playing': 'onPlay',
         'audio.pause': 'onStop',
         'audio.ended': 'onEnd'
+      },
+      keyBindings: {
+        'space': 'onTap'
       },
       computeIcon: function (playing) {
         return playing ? 'stop' : 'play-arrow'
