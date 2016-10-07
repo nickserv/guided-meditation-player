@@ -10,6 +10,12 @@ Play a series of meditation audio segments with arbitrarily long pauses in betwe
 ## Status
 In development, currently as a prototype for the UI.
 
+## Supported Browsers
+- Chrome
+- Edge
+- Firefox
+- Safari
+
 ## Requirements
 
 ### Non Functional
