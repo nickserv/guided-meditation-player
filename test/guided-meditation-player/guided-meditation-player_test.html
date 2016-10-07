@@ -19,14 +19,12 @@
     </test-fixture>
 
     <script>
-      suite('guided-meditation-player', function() {
-
-        test('instantiating the element works', function() {
-          var element = fixture('basic');
-          assert.equal(element.is, 'guided-meditation-player');
-        });
-
-      });
+      suite('guided-meditation-player', () => {
+        test('instantiating the element works', () => {
+          var element = fixture('basic')
+          assert.equal(element.is, 'guided-meditation-player')
+        })
+      })
     </script>
   </body>
 </html>
