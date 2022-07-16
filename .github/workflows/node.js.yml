@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 6
-      - run: npm install -g bower polymer-cli
+      - run: npm install -g bower polymer-cli@0.18.4
       - run: bower install
       - run: polymer lint --no-follow-dependencies
       - run: polymer build
