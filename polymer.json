@@ -1,5 +1,8 @@
 {
   "includeDependencies": [
     ".surgeignore"
-  ]
+  ],
+  "lint": {
+    "rules": ["polymer-1"]
+  }
 }
