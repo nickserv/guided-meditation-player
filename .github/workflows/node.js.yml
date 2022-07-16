@@ -10,6 +10,6 @@ jobs:
       - uses: actions/checkout@v3
       - run: npm install -g bower polymer-cli --legacy-peer-deps
       - run: bower install
-      - run: polymer lint --no-follow-dependencies
+      - run: polymer lint
       - run: polymer build
       - run: polymer test
