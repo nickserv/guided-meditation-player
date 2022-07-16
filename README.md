@@ -1,4 +1,4 @@
-# [Guided Meditation Player](https://meditationplayer.surge.sh/)
+# Guided Meditation Player
 
 A minimal guided meditation player, built with Polymer.
 
