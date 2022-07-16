@@ -1,5 +1,5 @@
 # [Guided Meditation Player](https://meditationplayer.surge.sh/)
-[![Build Status](https://travis-ci.org/nickmccurdy/guided-meditation-player.svg?branch=master)](https://travis-ci.org/nickmccurdy/guided-meditation-player)
+[![Build Status](https://travis-ci.org/nickmccurdy/guided-meditation-player.svg?branch=main)](https://travis-ci.org/nickmccurdy/guided-meditation-player)
 [![Dependency Status](https://gemnasium.com/badges/github.com/nickmccurdy/guided-meditation-player.svg)](https://gemnasium.com/github.com/nickmccurdy/guided-meditation-player)
 
 A minimal guided meditation player, built with Polymer.
